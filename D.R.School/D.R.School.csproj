@@ -32,7 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,11 +49,49 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\SchoolContext.cs" />
+    <Compile Include="DAL\SchoolInitializer.cs" />
+    <Compile Include="Migrations\201802061654557_InitialCreate.cs" />
+    <Compile Include="Migrations\201802061654557_InitialCreate.Designer.cs">
+      <DependentUpon>201802061654557_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802061713262_Added Stanowisko.cs" />
+    <Compile Include="Migrations\201802061713262_Added Stanowisko.Designer.cs">
+      <DependentUpon>201802061713262_Added Stanowisko.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802061733531_Added Zalogant.cs" />
+    <Compile Include="Migrations\201802061733531_Added Zalogant.Designer.cs">
+      <DependentUpon>201802061733531_Added Zalogant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Course.cs" />
+    <Compile Include="Models\Kierunek.cs" />
+    <Compile Include="Models\Lot.cs" />
+    <Compile Include="Models\Odprawa.cs" />
+    <Compile Include="Models\OdprawaPasazer.cs" />
+    <Compile Include="Models\Pasazer.cs" />
+    <Compile Include="Models\Samolot.cs" />
+    <Compile Include="Models\Stanowisko.cs" />
+    <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\TypSamolotu.cs" />
+    <Compile Include="Models\Zalogant.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201802061654557_InitialCreate.resx">
+      <DependentUpon>201802061654557_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802061713262_Added Stanowisko.resx">
+      <DependentUpon>201802061713262_Added Stanowisko.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802061733531_Added Zalogant.resx">
+      <DependentUpon>201802061733531_Added Zalogant.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
